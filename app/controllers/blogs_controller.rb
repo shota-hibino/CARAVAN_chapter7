@@ -1,12 +1,14 @@
 class BlogsController < ApplicationController
-  def index
-  end
-
   def show
   end
 
+  def index
+    # Blogモデル内のすべての投稿記事データを取得
+    @blogs = Blog.all
+  end
+
   def new
-    # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する。
+    # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成
     @blog = Blog.new
   end
 
