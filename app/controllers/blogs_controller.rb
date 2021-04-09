@@ -36,8 +36,14 @@ class BlogsController < ApplicationController
     # 記事の詳細ページにリダイレクト
     redirect_to blog_path(blog)
   end
-  
+
   def destroy
+    # データベースから投稿データを探し、blogに渡す
+    blog = Blog.find(params[:id])
+    # 投稿データを削除する
+    blog.destroy
+    # 一覧ページにリダイレクト
+    redirect_to blogs_path
   end
 
   private
