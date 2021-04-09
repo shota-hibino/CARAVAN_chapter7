@@ -28,6 +28,15 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
   end
 
+  def update
+    # データベースから投稿データを探し、blogに渡す
+    blog = Blog.find(params[:id])
+    # 記事を更新
+    blog.update(blog_params)
+    # 記事の詳細ページにリダイレクト
+    redirect_to blog_path(blog)
+  end
+
   private
   # ストロングパラメータ
   def blog_params
