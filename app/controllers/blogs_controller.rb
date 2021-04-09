@@ -24,6 +24,8 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    # データベースから投稿データを探し、インスタンス変数としてviewへ渡す
+    @blog = Blog.find(params[:id])
   end
 
   private
