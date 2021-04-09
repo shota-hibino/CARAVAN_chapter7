@@ -36,6 +36,9 @@ class BlogsController < ApplicationController
     # 記事の詳細ページにリダイレクト
     redirect_to blog_path(blog)
   end
+  
+  def destroy
+  end
 
   private
   # ストロングパラメータ
