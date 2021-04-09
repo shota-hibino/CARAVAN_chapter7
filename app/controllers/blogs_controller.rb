@@ -19,8 +19,8 @@ class BlogsController < ApplicationController
     blog = Blog.new(blog_params)
     # データをデータベースに保存するためのsaveメソッド実行
     blog.save
-    # リダイレクト
-    redirect_to blogs_path
+    # 詳細ページへリダイレクト
+    redirect_to blog_path(blog.id)
   end
 
   def edit
