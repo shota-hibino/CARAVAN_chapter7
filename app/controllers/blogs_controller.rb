@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   def show
+    # 記事のidを取得して、インスタンス変数としてViewへ渡す
+     @blog = Blog.find(params[:id])
   end
 
   def index
